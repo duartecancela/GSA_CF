@@ -17,7 +17,7 @@ namespace GSA_CF.Areas.Alunos.Controllers
         // GET: Alunos/Epocas
         public ActionResult Index()
         {
-            return View(db.Epocas.ToList());
+            return View(db.Epoca.ToList());
         }
 
         // GET: Alunos/Epocas/Details/5
@@ -27,7 +27,7 @@ namespace GSA_CF.Areas.Alunos.Controllers
             {
                 return new HttpStatusCodeResult(HttpStatusCode.BadRequest);
             }
-            Epoca epoca = db.Epocas.Find(id);
+            Epoca epoca = db.Epoca.Find(id);
             if (epoca == null)
             {
                 return HttpNotFound();
@@ -46,11 +46,11 @@ namespace GSA_CF.Areas.Alunos.Controllers
         // more details see https://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public ActionResult Create([Bind(Include = "id,nome")] Epoca epoca)
+        public ActionResult Create([Bind(Include = "Id,Nome")] Epoca epoca)
         {
             if (ModelState.IsValid)
             {
-                db.Epocas.Add(epoca);
+                db.Epoca.Add(epoca);
                 db.SaveChanges();
                 return RedirectToAction("Index");
             }
@@ -65,7 +65,7 @@ namespace GSA_CF.Areas.Alunos.Controllers
             {
                 return new HttpStatusCodeResult(HttpStatusCode.BadRequest);
             }
-            Epoca epoca = db.Epocas.Find(id);
+            Epoca epoca = db.Epoca.Find(id);
             if (epoca == null)
             {
                 return HttpNotFound();
@@ -78,7 +78,7 @@ namespace GSA_CF.Areas.Alunos.Controllers
         // more details see https://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public ActionResult Edit([Bind(Include = "id,nome")] Epoca epoca)
+        public ActionResult Edit([Bind(Include = "Id,Nome")] Epoca epoca)
         {
             if (ModelState.IsValid)
             {
@@ -96,7 +96,7 @@ namespace GSA_CF.Areas.Alunos.Controllers
             {
                 return new HttpStatusCodeResult(HttpStatusCode.BadRequest);
             }
-            Epoca epoca = db.Epocas.Find(id);
+            Epoca epoca = db.Epoca.Find(id);
             if (epoca == null)
             {
                 return HttpNotFound();
@@ -109,8 +109,8 @@ namespace GSA_CF.Areas.Alunos.Controllers
         [ValidateAntiForgeryToken]
         public ActionResult DeleteConfirmed(int id)
         {
-            Epoca epoca = db.Epocas.Find(id);
-            db.Epocas.Remove(epoca);
+            Epoca epoca = db.Epoca.Find(id);
+            db.Epoca.Remove(epoca);
             db.SaveChanges();
             return RedirectToAction("Index");
         }

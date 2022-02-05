@@ -17,7 +17,7 @@ namespace GSA_CF.Areas.Alunos.Controllers
         // GET: Alunos/Alunoes
         public ActionResult Index()
         {
-            return View(db.Alunos.ToList());
+            return View(db.Aluno.ToList());
         }
 
         // GET: Alunos/Alunoes/Details/5
@@ -27,7 +27,7 @@ namespace GSA_CF.Areas.Alunos.Controllers
             {
                 return new HttpStatusCodeResult(HttpStatusCode.BadRequest);
             }
-            Aluno aluno = db.Alunos.Find(id);
+            Aluno aluno = db.Aluno.Find(id);
             if (aluno == null)
             {
                 return HttpNotFound();
@@ -46,11 +46,11 @@ namespace GSA_CF.Areas.Alunos.Controllers
         // more details see https://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public ActionResult Create([Bind(Include = "id,nome")] Aluno aluno)
+        public ActionResult Create([Bind(Include = "Id,Nome")] Aluno aluno)
         {
             if (ModelState.IsValid)
             {
-                db.Alunos.Add(aluno);
+                db.Aluno.Add(aluno);
                 db.SaveChanges();
                 return RedirectToAction("Index");
             }
@@ -65,7 +65,7 @@ namespace GSA_CF.Areas.Alunos.Controllers
             {
                 return new HttpStatusCodeResult(HttpStatusCode.BadRequest);
             }
-            Aluno aluno = db.Alunos.Find(id);
+            Aluno aluno = db.Aluno.Find(id);
             if (aluno == null)
             {
                 return HttpNotFound();
@@ -78,7 +78,7 @@ namespace GSA_CF.Areas.Alunos.Controllers
         // more details see https://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public ActionResult Edit([Bind(Include = "id,nome")] Aluno aluno)
+        public ActionResult Edit([Bind(Include = "Id,Nome")] Aluno aluno)
         {
             if (ModelState.IsValid)
             {
@@ -96,7 +96,7 @@ namespace GSA_CF.Areas.Alunos.Controllers
             {
                 return new HttpStatusCodeResult(HttpStatusCode.BadRequest);
             }
-            Aluno aluno = db.Alunos.Find(id);
+            Aluno aluno = db.Aluno.Find(id);
             if (aluno == null)
             {
                 return HttpNotFound();
@@ -109,8 +109,8 @@ namespace GSA_CF.Areas.Alunos.Controllers
         [ValidateAntiForgeryToken]
         public ActionResult DeleteConfirmed(int id)
         {
-            Aluno aluno = db.Alunos.Find(id);
-            db.Alunos.Remove(aluno);
+            Aluno aluno = db.Aluno.Find(id);
+            db.Aluno.Remove(aluno);
             db.SaveChanges();
             return RedirectToAction("Index");
         }

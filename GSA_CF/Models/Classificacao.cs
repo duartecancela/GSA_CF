@@ -9,23 +9,23 @@ namespace GSA_CF.Models
     public class Classificacao
     {
         [Key]
-        public int id { get; set; }
+        public int Id { get; set; }
 
-        public string nome { get; set; }
+        public string Nome { get; set; }
 
-        public int id_aluno { get; set; }
+        public int AlunoId { get; set; }
 
-        public int id_uc { get; set; }
+        public int UcId { get; set; }
 
-        public int id_epoca { get; set; }
+        public int EpocaId { get; set; }
 
-        public int nota { get; set; }
+        public int Nota { get; set; }
 
-        public string obs { get; set; }
+        public string Obs { get; set; }
 
 
         public virtual Aluno Aluno { get; set; }
         public virtual Epoca Epoca { get; set; }
-        public virtual UC UC { get; set; }
+        public virtual UC Uc { get; set; }
     }
 }

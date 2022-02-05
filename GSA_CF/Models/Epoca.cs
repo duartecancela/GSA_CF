@@ -10,8 +10,8 @@ namespace GSA_CF.Models
     public class Epoca
     {
         [Key]
-        public int id { get; set; }
-        public string nome { get; set; }
+        public int Id { get; set; }
+        public string Nome { get; set; }
 
         public virtual ICollection<Classificacao> Classificacao { get; set; }
     }

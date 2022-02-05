@@ -13,10 +13,10 @@ namespace GSA_CF.Models
 
         }
 
-        public DbSet<Aluno> Alunos { get; set; }
+        public DbSet<Aluno> Aluno { get; set; }
 
-        public DbSet<Classificacao> Classificacoes { get; set; }
-        public DbSet<Epoca> Epocas { get; set; }
-        public DbSet<UC> UCs { get; set; }
+        public DbSet<Classificacao> Classificacao { get; set; }
+        public DbSet<Epoca> Epoca { get; set; }
+        public DbSet<UC> UC { get; set; }
     }
 }

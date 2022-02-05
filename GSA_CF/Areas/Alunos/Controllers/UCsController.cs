@@ -17,7 +17,7 @@ namespace GSA_CF.Areas.Alunos.Controllers
         // GET: Alunos/UCs
         public ActionResult Index()
         {
-            return View(db.UCs.ToList());
+            return View(db.UC.ToList());
         }
 
         // GET: Alunos/UCs/Details/5
@@ -27,7 +27,7 @@ namespace GSA_CF.Areas.Alunos.Controllers
             {
                 return new HttpStatusCodeResult(HttpStatusCode.BadRequest);
             }
-            UC uC = db.UCs.Find(id);
+            UC uC = db.UC.Find(id);
             if (uC == null)
             {
                 return HttpNotFound();
@@ -46,11 +46,11 @@ namespace GSA_CF.Areas.Alunos.Controllers
         // more details see https://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public ActionResult Create([Bind(Include = "id,nome")] UC uC)
+        public ActionResult Create([Bind(Include = "Id,Nome")] UC uC)
         {
             if (ModelState.IsValid)
             {
-                db.UCs.Add(uC);
+                db.UC.Add(uC);
                 db.SaveChanges();
                 return RedirectToAction("Index");
             }
@@ -65,7 +65,7 @@ namespace GSA_CF.Areas.Alunos.Controllers
             {
                 return new HttpStatusCodeResult(HttpStatusCode.BadRequest);
             }
-            UC uC = db.UCs.Find(id);
+            UC uC = db.UC.Find(id);
             if (uC == null)
             {
                 return HttpNotFound();
@@ -78,7 +78,7 @@ namespace GSA_CF.Areas.Alunos.Controllers
         // more details see https://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public ActionResult Edit([Bind(Include = "id,nome")] UC uC)
+        public ActionResult Edit([Bind(Include = "Id,Nome")] UC uC)
         {
             if (ModelState.IsValid)
             {
@@ -96,7 +96,7 @@ namespace GSA_CF.Areas.Alunos.Controllers
             {
                 return new HttpStatusCodeResult(HttpStatusCode.BadRequest);
             }
-            UC uC = db.UCs.Find(id);
+            UC uC = db.UC.Find(id);
             if (uC == null)
             {
                 return HttpNotFound();
@@ -109,8 +109,8 @@ namespace GSA_CF.Areas.Alunos.Controllers
         [ValidateAntiForgeryToken]
         public ActionResult DeleteConfirmed(int id)
         {
-            UC uC = db.UCs.Find(id);
-            db.UCs.Remove(uC);
+            UC uC = db.UC.Find(id);
+            db.UC.Remove(uC);
             db.SaveChanges();
             return RedirectToAction("Index");
         }

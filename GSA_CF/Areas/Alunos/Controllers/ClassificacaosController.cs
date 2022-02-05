@@ -17,7 +17,8 @@ namespace GSA_CF.Areas.Alunos.Controllers
         // GET: Alunos/Classificacaos
         public ActionResult Index()
         {
-            return View(db.Classificacoes.ToList());
+            var classificacao = db.Classificacao.Include(c => c.Aluno).Include(c => c.Epoca).Include(c => c.Uc);
+            return View(classificacao.ToList());
         }
 
         // GET: Alunos/Classificacaos/Details/5
@@ -27,7 +28,7 @@ namespace GSA_CF.Areas.Alunos.Controllers
             {
                 return new HttpStatusCodeResult(HttpStatusCode.BadRequest);
             }
-            Classificacao classificacao = db.Classificacoes.Find(id);
+            Classificacao classificacao = db.Classificacao.Find(id);
             if (classificacao == null)
             {
                 return HttpNotFound();
@@ -38,6 +39,9 @@ namespace GSA_CF.Areas.Alunos.Controllers
         // GET: Alunos/Classificacaos/Create
         public ActionResult Create()
         {
+            ViewBag.AlunoId = new SelectList(db.Aluno, "Id", "Nome");
+            ViewBag.EpocaId = new SelectList(db.Epoca, "Id", "Nome");
+            ViewBag.UcId = new SelectList(db.UC, "Id", "Nome");
             return View();
         }
 
@@ -46,15 +50,18 @@ namespace GSA_CF.Areas.Alunos.Controllers
         // more details see https://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public ActionResult Create([Bind(Include = "id,nome,id_aluno,id_uc,id_epoca,nota,obs")] Classificacao classificacao)
+        public ActionResult Create([Bind(Include = "Id,Nome,AlunoId,UcId,EpocaId,Nota,Obs")] Classificacao classificacao)
         {
             if (ModelState.IsValid)
             {
-                db.Classificacoes.Add(classificacao);
+                db.Classificacao.Add(classificacao);
                 db.SaveChanges();
                 return RedirectToAction("Index");
             }
 
+            ViewBag.AlunoId = new SelectList(db.Aluno, "Id", "Nome", classificacao.AlunoId);
+            ViewBag.EpocaId = new SelectList(db.Epoca, "Id", "Nome", classificacao.EpocaId);
+            ViewBag.UcId = new SelectList(db.UC, "Id", "Nome", classificacao.UcId);
             return View(classificacao);
         }
 
@@ -65,11 +72,14 @@ namespace GSA_CF.Areas.Alunos.Controllers
             {
                 return new HttpStatusCodeResult(HttpStatusCode.BadRequest);
             }
-            Classificacao classificacao = db.Classificacoes.Find(id);
+            Classificacao classificacao = db.Classificacao.Find(id);
             if (classificacao == null)
             {
                 return HttpNotFound();
             }
+            ViewBag.AlunoId = new SelectList(db.Aluno, "Id", "Nome", classificacao.AlunoId);
+            ViewBag.EpocaId = new SelectList(db.Epoca, "Id", "Nome", classificacao.EpocaId);
+            ViewBag.UcId = new SelectList(db.UC, "Id", "Nome", classificacao.UcId);
             return View(classificacao);
         }
 
@@ -78,7 +88,7 @@ namespace GSA_CF.Areas.Alunos.Controllers
         // more details see https://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public ActionResult Edit([Bind(Include = "id,nome,id_aluno,id_uc,id_epoca,nota,obs")] Classificacao classificacao)
+        public ActionResult Edit([Bind(Include = "Id,Nome,AlunoId,UcId,EpocaId,Nota,Obs")] Classificacao classificacao)
         {
             if (ModelState.IsValid)
             {
@@ -86,6 +96,9 @@ namespace GSA_CF.Areas.Alunos.Controllers
                 db.SaveChanges();
                 return RedirectToAction("Index");
             }
+            ViewBag.AlunoId = new SelectList(db.Aluno, "Id", "Nome", classificacao.AlunoId);
+            ViewBag.EpocaId = new SelectList(db.Epoca, "Id", "Nome", classificacao.EpocaId);
+            ViewBag.UcId = new SelectList(db.UC, "Id", "Nome", classificacao.UcId);
             return View(classificacao);
         }
 
@@ -96,7 +109,7 @@ namespace GSA_CF.Areas.Alunos.Controllers
             {
                 return new HttpStatusCodeResult(HttpStatusCode.BadRequest);
             }
-            Classificacao classificacao = db.Classificacoes.Find(id);
+            Classificacao classificacao = db.Classificacao.Find(id);
             if (classificacao == null)
             {
                 return HttpNotFound();
@@ -109,8 +122,8 @@ namespace GSA_CF.Areas.Alunos.Controllers
         [ValidateAntiForgeryToken]
         public ActionResult DeleteConfirmed(int id)
         {
-            Classificacao classificacao = db.Classificacoes.Find(id);
-            db.Classificacoes.Remove(classificacao);
+            Classificacao classificacao = db.Classificacao.Find(id);
+            db.Classificacao.Remove(classificacao);
             db.SaveChanges();
             return RedirectToAction("Index");
         }

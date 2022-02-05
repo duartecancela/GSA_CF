@@ -136,9 +136,9 @@
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
     </Compile>
-    <Compile Include="Migrations\202202051821378_InitialMigration.cs" />
-    <Compile Include="Migrations\202202051821378_InitialMigration.designer.cs">
-      <DependentUpon>202202051821378_InitialMigration.cs</DependentUpon>
+    <Compile Include="Migrations\202202052239416_InitialMigration1.cs" />
+    <Compile Include="Migrations\202202052239416_InitialMigration1.designer.cs">
+      <DependentUpon>202202052239416_InitialMigration1.cs</DependentUpon>
     </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Models\Aluno.cs" />
@@ -173,16 +173,16 @@
     <Content Include="Areas\Alunos\Views\UCs\Details.cshtml" />
     <Content Include="Areas\Alunos\Views\UCs\Edit.cshtml" />
     <Content Include="Areas\Alunos\Views\UCs\Index.cshtml" />
-    <Content Include="Areas\Alunos\Views\Classificacaos\Create.cshtml" />
-    <Content Include="Areas\Alunos\Views\Classificacaos\Delete.cshtml" />
-    <Content Include="Areas\Alunos\Views\Classificacaos\Details.cshtml" />
-    <Content Include="Areas\Alunos\Views\Classificacaos\Edit.cshtml" />
-    <Content Include="Areas\Alunos\Views\Classificacaos\Index.cshtml" />
     <Content Include="Areas\Alunos\Views\Epocas\Create.cshtml" />
     <Content Include="Areas\Alunos\Views\Epocas\Delete.cshtml" />
     <Content Include="Areas\Alunos\Views\Epocas\Details.cshtml" />
     <Content Include="Areas\Alunos\Views\Epocas\Edit.cshtml" />
     <Content Include="Areas\Alunos\Views\Epocas\Index.cshtml" />
+    <Content Include="Areas\Alunos\Views\Classificacaos\Create.cshtml" />
+    <Content Include="Areas\Alunos\Views\Classificacaos\Delete.cshtml" />
+    <Content Include="Areas\Alunos\Views\Classificacaos\Details.cshtml" />
+    <Content Include="Areas\Alunos\Views\Classificacaos\Edit.cshtml" />
+    <Content Include="Areas\Alunos\Views\Classificacaos\Index.cshtml" />
     <None Include="Scripts\jquery-3.4.1.intellisense.js" />
     <Content Include="Scripts\jquery-3.4.1.js" />
     <Content Include="Scripts\jquery-3.4.1.min.js" />
@@ -227,8 +227,8 @@
     <Content Include="Scripts\jquery-3.4.1.min.map" />
   </ItemGroup>
   <ItemGroup>
-    <EmbeddedResource Include="Migrations\202202051821378_InitialMigration.resx">
-      <DependentUpon>202202051821378_InitialMigration.cs</DependentUpon>
+    <EmbeddedResource Include="Migrations\202202052239416_InitialMigration1.resx">
+      <DependentUpon>202202052239416_InitialMigration1.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <PropertyGroup>
