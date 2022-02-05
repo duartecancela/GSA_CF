@@ -127,6 +127,11 @@
     <Compile Include="App_Start\BundleConfig.cs" />
     <Compile Include="App_Start\FilterConfig.cs" />
     <Compile Include="App_Start\RouteConfig.cs" />
+    <Compile Include="Areas\Alunos\AlunosAreaRegistration.cs" />
+    <Compile Include="Areas\Alunos\Controllers\AlunoesController.cs" />
+    <Compile Include="Areas\Alunos\Controllers\ClassificacaosController.cs" />
+    <Compile Include="Areas\Alunos\Controllers\EpocasController.cs" />
+    <Compile Include="Areas\Alunos\Controllers\UCsController.cs" />
     <Compile Include="Controllers\HomeController.cs" />
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
@@ -155,6 +160,29 @@
     <Content Include="Content\Site.css" />
     <Content Include="Scripts\bootstrap.js" />
     <Content Include="Scripts\bootstrap.min.js" />
+    <Content Include="Areas\Alunos\Views\web.config" />
+    <Content Include="Areas\Alunos\Views\_ViewStart.cshtml" />
+    <Content Include="Areas\Alunos\Views\Shared\_Layout.cshtml" />
+    <Content Include="Areas\Alunos\Views\Alunoes\Create.cshtml" />
+    <Content Include="Areas\Alunos\Views\Alunoes\Delete.cshtml" />
+    <Content Include="Areas\Alunos\Views\Alunoes\Details.cshtml" />
+    <Content Include="Areas\Alunos\Views\Alunoes\Edit.cshtml" />
+    <Content Include="Areas\Alunos\Views\Alunoes\Index.cshtml" />
+    <Content Include="Areas\Alunos\Views\UCs\Create.cshtml" />
+    <Content Include="Areas\Alunos\Views\UCs\Delete.cshtml" />
+    <Content Include="Areas\Alunos\Views\UCs\Details.cshtml" />
+    <Content Include="Areas\Alunos\Views\UCs\Edit.cshtml" />
+    <Content Include="Areas\Alunos\Views\UCs\Index.cshtml" />
+    <Content Include="Areas\Alunos\Views\Classificacaos\Create.cshtml" />
+    <Content Include="Areas\Alunos\Views\Classificacaos\Delete.cshtml" />
+    <Content Include="Areas\Alunos\Views\Classificacaos\Details.cshtml" />
+    <Content Include="Areas\Alunos\Views\Classificacaos\Edit.cshtml" />
+    <Content Include="Areas\Alunos\Views\Classificacaos\Index.cshtml" />
+    <Content Include="Areas\Alunos\Views\Epocas\Create.cshtml" />
+    <Content Include="Areas\Alunos\Views\Epocas\Delete.cshtml" />
+    <Content Include="Areas\Alunos\Views\Epocas\Details.cshtml" />
+    <Content Include="Areas\Alunos\Views\Epocas\Edit.cshtml" />
+    <Content Include="Areas\Alunos\Views\Epocas\Index.cshtml" />
     <None Include="Scripts\jquery-3.4.1.intellisense.js" />
     <Content Include="Scripts\jquery-3.4.1.js" />
     <Content Include="Scripts\jquery-3.4.1.min.js" />
@@ -183,6 +211,7 @@
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
+    <Folder Include="Areas\Alunos\Data\" />
   </ItemGroup>
   <ItemGroup>
     <Content Include="fonts\glyphicons-halflings-regular.woff2" />
