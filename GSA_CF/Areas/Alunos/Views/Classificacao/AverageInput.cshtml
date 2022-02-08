@@ -1,0 +1,21 @@
+﻿
+@{
+    ViewBag.Title = "AverageInput";
+}
+
+<h2>AverageInput</h2>
+
+@using (Html.BeginForm("AverageResult", "Classificacao", FormMethod.Post))
+{
+    @Html.AntiForgeryToken()
+
+    <p>
+
+        <label for="disciplina">Disciplina:</label><br>
+        <input type="text" name="disciplina" /><br />
+        <label for="epoca">Epoca:</label><br>
+        <input type="text" name="epoca" /><br />
+        <input type="submit" value="Filter" />
+    </p>
+}
+
