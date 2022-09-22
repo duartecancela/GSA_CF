@@ -1,2 +1,2 @@
 # GSA_CF
-Sistema de Gestão de Alunos ASPNET
+Sistema de Gestão de Alunos ASPNET (Code First)
